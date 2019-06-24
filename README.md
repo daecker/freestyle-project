@@ -19,7 +19,8 @@ TIFF
 Image sizing
 
 To enable accurate image detection within the Cloud Vision API, images should generally be a minimum of 640 x 480 pixels (about 300k pixels). Full details for different types of Vision API Feature requests are shown below:
-FACE_DETECTION	1600 x 1200	Distance between eyes is most important
+FACE_DETECTION	1600 x 1200	Distance between eyes is most important\n\n
+
 LANDMARK_DETECTION	640 x 480	
 LOGO_DETECTION	640 x 480	
 LABEL_DETECTION	640 x 480	
