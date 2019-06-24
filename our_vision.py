@@ -32,3 +32,24 @@ def get_text_annotations(img_filepath):
     # each  annotation is a <class 'google.cloud.vision_v1.types.EntityAnnotation'>
     descriptions = [a.description.strip() for a in annotations] #> ['1 7 6 3', '1', '7', '6', '3']
     return descriptions
+
+if __name__ == "__main__":
+
+    print("CREDENTIALS FILEPATH:", os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
+
+    img_filepath = os.path.join(os.path.dirname(__file__), "images", "empire.jpg")
+    print("IMAGE FILEPATH:", os.path.isfile(img_filepath), img_filepath)
+    print(os.path.isfile(img_filepath))
+
+    with io.open(img_filepath, 'rb') as image_file:
+        content = image_file.read()
+    image = types.Image(content=content) #> <class 'google.cloud.vision_v1.types.Image'>
+
+
+    client = new_client()
+
+    print(type(client))
+    response = client.landmark_detection(image=image)
+    print(type(response))
+
+    breakpoint()
