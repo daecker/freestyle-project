@@ -3,9 +3,9 @@
 # Suported Images
 
 ## File Formats
-<pre>
-The Cloud Vision API supports the following image types:
 
+The Cloud Vision API supports the following image types:
+<pre>
 JPEG
 PNG8
 PNG24
@@ -17,8 +17,8 @@ RAW
 ICO
 PDF
 TIFF
-
 </pre>
+
 
 ## Image Sizing
 
