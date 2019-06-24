@@ -3,22 +3,37 @@
 # SETUP
 
 ## Initial setup
-Fork the repository and clone a copy of your forked repository to a location on your computer
+
+Fork the repository and clone your forked repository to a location on your computer
 
 ## Google Cloud API Access
+
   1. Create account on console.cloud.google.com #you may be asked to enter your CC information. 
   2. Create "new project".
   3. Add team members as needed to your project. When adding team members, be sure to set their preferences #editor preferred
   4. In the search bar, search for the  "Cloud Vision API" and click enable.
   5. Click "create credentials" and download the credentials to your computer.
         + you will be asked to create a service account. Be sure to give service account editor access
+  6. See section below on credentials
 
 ## Credentials
 
+Navigate to the folder where you downloaded the "freestyle-project". You will want to create a folder called "auth" and drop in your downloaded credentials. It is good practice to change the name of the file to something more user friendly, such as "credentials_freestyle.json"
+
+
 ## Enviornment
-Open comand line and change directory to where you stored teh "freestyle-project" folder
+Open comand line and change directory to where you stored the "freestyle-project" folder. 
+
+Create a new virtual enviornment
+
 ```sh
 conda create -n vision-env python=3.7
+conda activate vision-env
+```
+
+From within the virtual enviornment
+```sh
+pip install -r requirements.txt
 ```
 
 # Suported Images
