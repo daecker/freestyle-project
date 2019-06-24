@@ -17,6 +17,9 @@ This file is preloaded with landmark images. Future iterations of this program w
         + you will be asked to create a service account. Be sure to give service account editor access
   6. See section below on credentials
 
+Cloud Vision API Documentation: https://cloud.google.com/vision/?hl=en_US&_ga=2.234184030.-1556885463.1560810554
+
+
 ## Credentials
 
 Navigate to the folder where you downloaded the "freestyle-project". You will want to create a folder called "auth" and drop in your downloaded credentials. Please rename the file to "credentials_freestyle.json"
@@ -33,6 +36,7 @@ create a .env file and add the following
 ```sh
 GOOGLE_APPLICATION_CREDENTIALS = "auth/credentials_freestyle.json"
 ```
+
 
 
 ## Enviornment
