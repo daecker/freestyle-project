@@ -1,6 +1,8 @@
 # freestyle-project
 
 # Suported Images
+
+## File Formats
 <pre>
 The Cloud Vision API supports the following image types:
 
@@ -18,7 +20,7 @@ TIFF
 
 </pre>
 
-# Image Sizing
+## Image Sizing
 <pre>
 Image sizing
 
@@ -36,5 +38,5 @@ TEXT_DETECTION and DOCUMENT_TEXT_DETECTION	1024 x 768	OCR requires more resoluti
 SAFE_SEARCH_DETECTION	640 x 480
 </pre>
 
-# File Size
+## File Size
 Image files sent to the Cloud Vision API should not exceed 20MB. Reducing your file size can significantly improve throughput; however, be careful not to reduce image quality in the process. Note that the Vision API imposes a 10MB JSON request size limit; larger files should be hosted on Cloud Storage or on the web, rather than being passed as base64-encoded content in the JSON itself.
