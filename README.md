@@ -5,19 +5,19 @@
 ## File Formats
 
 The Cloud Vision API supports the following image types:
-<pre>
-JPEG
-PNG8
-PNG24
-GIF
-Animated GIF (first frame only)
-BMP
-WEBP
-RAW
-ICO
-PDF
-TIFF
-</pre>
+
+  + JPEG
+  + PNG8
+  + PNG24
+  + GIF
+  + Animated GIF (first frame only)
+  + BMP
+  + WEBP
+  + RAW
+  + ICO
+  + PDF
+  + TIFF
+
 
 
 ## Image Sizing
@@ -43,3 +43,10 @@ SAFE_SEARCH_DETECTION	640 x 480
 
 ## File Size
 Image files sent to the Cloud Vision API should not exceed 20MB. Reducing your file size can significantly improve throughput; however, be careful not to reduce image quality in the process. Note that the Vision API imposes a 10MB JSON request size limit; larger files should be hosted on Cloud Storage or on the web, rather than being passed as base64-encoded content in the JSON itself.
+
+## SETUP
+create service account 
+service account name: name of project
+  + make sure to give service account editor access
+
+## Credentials
