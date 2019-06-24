@@ -5,6 +5,7 @@
 ## Initial setup
 
 Fork the repository and clone your forked repository to a location on your computer
+This file is preloaded with landmark images. Future iterations of this program we hope to have the user load new images and expand beyond landmarks.
 
 ## Google Cloud API Access
 

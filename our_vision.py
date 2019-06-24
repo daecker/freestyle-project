@@ -52,4 +52,4 @@ if __name__ == "__main__":
     response = client.landmark_detection(image=image)
     print(type(response))
 
-    breakpoint()
+  
