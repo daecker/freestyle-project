@@ -1,5 +1,26 @@
 # freestyle-project
 
+# SETUP
+
+## Initial setup
+Fork the repository and clone a copy of your forked repository to a location on your computer
+
+## Google Cloud API Access
+  1. Create account on console.cloud.google.com #you may be asked to enter your CC information. 
+  2. Create "new project".
+  3. Add team members as needed to your project. When adding team members, be sure to set their preferences #editor preferred
+  4. In the search bar, search for the  "Cloud Vision API" and click enable.
+  5. Click "create credentials" and download the credentials to your computer.
+        + you will be asked to create a service account. Be sure to give service account editor access
+
+## Credentials
+
+## Enviornment
+Open comand line and change directory to where you stored teh "freestyle-project" folder
+```sh
+conda create -n vision-env python=3.7
+```
+
 # Suported Images
 
 ## File Formats
@@ -18,8 +39,6 @@ The Cloud Vision API supports the following image types:
   + PDF
   + TIFF
 
-
-
 ## Image Sizing
 
 Image sizing
@@ -28,9 +47,7 @@ To enable accurate image detection within the Cloud Vision API, images should ge
 
 FACE_DETECTION	1600 x 1200	Distance between eyes is most important
 
-
 LANDMARK_DETECTION	640 x 480
-
 
 LOGO_DETECTION	640 x 480
 
@@ -43,17 +60,4 @@ SAFE_SEARCH_DETECTION	640 x 480
 
 ## File Size
 Image files sent to the Cloud Vision API should not exceed 20MB. Reducing your file size can significantly improve throughput; however, be careful not to reduce image quality in the process. Note that the Vision API imposes a 10MB JSON request size limit; larger files should be hosted on Cloud Storage or on the web, rather than being passed as base64-encoded content in the JSON itself.
-
-## SETUP
-create service account 
-service account name: name of project
-  + make sure to give service account editor access
-
-## Credentials
-
-## enviornment
-```sh
-conda create -n vision-env python=3.7
-```
-
 

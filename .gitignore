@@ -1,5 +1,7 @@
 # add google credentials
+auth/credentials_freestyle.json
 auth/credentials.json
+
 
 # ignore ds_store
 .DS_Store
