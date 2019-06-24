@@ -18,7 +18,20 @@ Fork the repository and clone your forked repository to a location on your compu
 
 ## Credentials
 
-Navigate to the folder where you downloaded the "freestyle-project". You will want to create a folder called "auth" and drop in your downloaded credentials. It is good practice to change the name of the file to something more user friendly, such as "credentials_freestyle.json"
+Navigate to the folder where you downloaded the "freestyle-project". You will want to create a folder called "auth" and drop in your downloaded credentials. Please rename the file to "credentials_freestyle.json"
+
+note: the gitignore file is set up to ignore your json file. Any deviations from app/credentials_freestyle.json will require an update to the gitignore file.
+
+gitignore file current setup:
+```sh
+auth/credentials_freestyle.json
+auth/credentials.json
+```
+
+create a .env file and add the following
+```sh
+GOOGLE_APPLICATION_CREDENTIALS = "auth/credentials_freestyle.json"
+```
 
 
 ## Enviornment
