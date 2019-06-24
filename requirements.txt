@@ -1,0 +1,4 @@
+#requirements.txt
+
+python-dotenv
+google-cloud-vision

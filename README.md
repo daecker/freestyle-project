@@ -50,3 +50,10 @@ service account name: name of project
   + make sure to give service account editor access
 
 ## Credentials
+
+## enviornment
+```sh
+conda create -n vision-env python=3.7
+```
+
+
