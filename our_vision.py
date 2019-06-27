@@ -16,30 +16,30 @@ def new_client():
     client = vision.ImageAnnotatorClient() # todo: explicit credentials
     return client
 
-def get_text_annotations(img_filepath):
-    with io.open(img_filepath, 'rb') as image_file:
-        content = image_file.read()
-    image = types.Image(content=content) #> <class 'google.cloud.vision_v1.types.Image'>
-
-    client = new_client()
-    response = client.text_detection(image=image) #> <class 'google.cloud.vision_v1.types.AnnotateImageResponse'>
-    annotations = response.text_annotations #> <class 'google.protobuf.pyext._message.RepeatedCompositeContainer'>
-    #print("ANNOTATIONS:", len(annotations))
-    #for annotation in annotations:
-    #    print("---------------")
-    #    print(type(annotation), annotation.locale)
-    #    print(annotation.description)
-    # each  annotation is a <class 'google.cloud.vision_v1.types.EntityAnnotation'>
-    descriptions = [a.description.strip() for a in annotations] #> ['1 7 6 3', '1', '7', '6', '3']
-    return descriptions
+#def get_text_annotations(img_filepath):
+#    with io.open(img_filepath, 'rb') as image_file:
+#        content = image_file.read()
+#    image = types.Image(content=content) #> <class 'google.cloud.vision_v1.types.Image'>
+#
+#    client = new_client()
+#    response = client.text_detection(image=image) #> <class 'google.cloud.vision_v1.types.AnnotateImageResponse'>
+#    annotations = response.text_annotations #> <class 'google.protobuf.pyext._message.RepeatedCompositeContainer'>
+#    #print("ANNOTATIONS:", len(annotations))
+#    #for annotation in annotations:
+#    #    print("---------------")
+#    #    print(type(annotation), annotation.locale)
+#    #    print(annotation.description)
+#    # each  annotation is a <class 'google.cloud.vision_v1.types.EntityAnnotation'>
+#    descriptions = [a.description.strip() for a in annotations] #> ['1 7 6 3', '1', '7', '6', '3']
+#    return descriptions
 
 if __name__ == "__main__":
 
-    print("CREDENTIALS FILEPATH:", os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
+    #print("CREDENTIALS FILEPATH:", os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
 
     img_filepath = os.path.join(os.path.dirname(__file__), "images", "angkor.jpg") #TODO this is currently set to single file
-    print("IMAGE FILEPATH:", os.path.isfile(img_filepath), img_filepath)
-    print(os.path.isfile(img_filepath))
+    #print("IMAGE FILEPATH:", os.path.isfile(img_filepath), img_filepath)
+    #print(os.path.isfile(img_filepath))
 
     with io.open(img_filepath, 'rb') as image_file:
         content = image_file.read()
@@ -48,10 +48,10 @@ if __name__ == "__main__":
 
     client = new_client()
 
-    print(type(client))
+    #print(type(client))
     response = client.landmark_detection(image=image)
-    print(type(response))
-    print(response)
+    #print(type(response))
+    #print(response)
 
     image_name = response.landmark_annotations[0].description
     image_score = response.landmark_annotations[0].score
