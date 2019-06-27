@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     #print("CREDENTIALS FILEPATH:", os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
 
-    img_filepath = os.path.join(os.path.dirname(__file__), "images", "angkor.jpg") #TODO this is currently set to single file
+    img_filepath = os.path.join(os.path.dirname(__file__), "images", "Angkor.jpg") #TODO this is currently set to single file
     #print("IMAGE FILEPATH:", os.path.isfile(img_filepath), img_filepath)
     #print(os.path.isfile(img_filepath))
 
@@ -52,6 +52,9 @@ if __name__ == "__main__":
     response = client.landmark_detection(image=image)
     #print(type(response))
     #print(response)
+
+    #used the following links for the below: https://cloud.google.com/vision/docs/reference/rpc/google.cloud.vision.v1
+    #https://cloud.google.com/vision/docs/reference/rpc/google.cloud.vision.v1#google.cloud.vision.v1.EntityAnnotation
 
     image_name = response.landmark_annotations[0].description
     image_score = response.landmark_annotations[0].score
