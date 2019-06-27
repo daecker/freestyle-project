@@ -52,8 +52,18 @@ if __name__ == "__main__":
     response = client.landmark_detection(image=image)
     print(type(response))
     print(response)
-  
-##response.landmark_annotations[0]
+
+    image_name = response.landmark_annotations[0].description
+    image_score = response.landmark_annotations[0].score
+    image_latitude = response.landmark_annotations[0].locations[0].lat_lng.latitude #type float
+    image_longitude = response.landmark_annotations[0].locations[0].lat_lng.longitude #type float
+
+    print(image_name)
+    print(image_score)
+    print(image_latitude)
+    print(image_longitude)
+
+ 
 
    
     
