@@ -45,14 +45,20 @@ if __name__ == "__main__":
     while True:
         image_folder = input("Please Enter Folder Directory Containing your Image Files: ")
         if not os.path.exists(image_folder):
-            print("You need to enter a valid path")
+            print("Oops! You need to enter a valid path")
         else:
             break
 
     folder_content = os.listdir(image_folder)
     print(folder_content)
     
-    image_selection = input("Please Enter a Valid Image Name (Exactly as it appears, including .jpg): ")
+    while True:
+        image_selection = input("Please Enter a Valid Image Name (Exactly as it appears, including .jpg): ")
+        if image_selection not in folder_content:
+            print("Oops! that is not a valid image name. Try Again")
+            print(folder_content)
+        else:
+            break
 
     img_filepath = os.path.join(str(image_folder), str(image_selection))
     
@@ -63,7 +69,7 @@ if __name__ == "__main__":
 
     client = new_client()
     response = client.landmark_detection(image=image)
-  
+
 
     #used the following links for the below: https://cloud.google.com/vision/docs/reference/rpc/google.cloud.vision.v1
     #https://cloud.google.com/vision/docs/reference/rpc/google.cloud.vision.v1#google.cloud.vision.v1.EntityAnnotation
@@ -74,11 +80,12 @@ if __name__ == "__main__":
     image_longitude = response.landmark_annotations[0].locations[0].lat_lng.longitude #type float
 
 ## INFORMATIN OUTPUT
-
-    print(image_name)
-    print(image_score)
-    print(image_latitude)
-    print(image_longitude)
+    print("We are identifying your landmark now...")
+    print("We found a match!")
+    print("The landmark is named:  " + image_name)
+    print("We can say that with a confidence (out of 100) of: " + str(image_score))
+    print("Landmark Location Latitude: " + str(image_latitude))
+    print("Landmark Location Longitude: " + str(image_longitude))
 
  
 
