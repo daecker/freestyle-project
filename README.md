@@ -54,6 +54,12 @@ From within the virtual enviornment
 pip install -r requirements.txt
 ```
 
+# Run Application
+
+```sh
+python our_vision.py
+```
+
 # Suported Images
 
 ## File Formats
