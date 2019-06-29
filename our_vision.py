@@ -24,25 +24,37 @@ def new_client():
 if __name__ == "__main__":
 
     #img_filepath = os.path.join(os.path.dirname(__file__), "images", "Angkor.jpg") #TODO this is currently set to single file
-    image_folder = input ("Please Enter Folder Directory Containing Your Image Files: ")
+    #here to 
+    #image_folder = input ("Please Enter Folder Directory Containing Your Image Files: ")
+    #folder_content = os.listdir(image_folder)
+    #
+    #print (folder_content)
+    #
+    #if not os.path.exists(image_folder):
+    #   print ("Path of the file is invalid")
+    #else:
+    #   image_selection = input ("Enter a Valid Image Name (In Lower Case Only): ")
+    #   print(folder_content)
+#
+    #if image_selection.lower() in folder_content:
+    #   print("Your Landmark Detection is on Its Way!")
+    #else:
+    #   print("Oops! I Don't See This File In Your Folder. Please Try Again") # rerun the original input prompt
+    #here
+
+    while True:
+        image_folder = input("Please Enter Folder Directory Containing your Image Files: ")
+        if not os.path.exists(image_folder):
+            print("You need to enter a valid path")
+        else:
+            break
+
     folder_content = os.listdir(image_folder)
+    print(folder_content)
     
-    print (folder_content)
-    if not os.path.exists(image_folder):
-       print ("Path of the file is invalid")
-    else:
-       image_selection = input ("Enter a Valid Image Name (In Lower Case Only): ")
-       print(folder_content)
-
-    if image_selection.lower() in folder_content:
-       print("Your Landmark Detection is on Its Way!")
-    else:
-       print("Oops! I Don't See This File In Your Folder. Please Try Again") # rerun the original input prompt
-       
-
+    image_selection = input("Please Enter a Valid Image Name (Exactly as it appears, including .jpg): ")
 
     img_filepath = os.path.join(str(image_folder), str(image_selection))
-    print (img_filepath)
     
     with io.open(img_filepath, 'rb') as image_file:
         content = image_file.read()
