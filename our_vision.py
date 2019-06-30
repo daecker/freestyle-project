@@ -11,6 +11,10 @@ load_dotenv() # load implicit creds GOOGLE_APPLICATION_CREDENTIALS
 
 ##SETUP
 
+def to_percent(my_confidence):
+    return "{:.2%}".format(my_confidence)
+
+
 def new_client():
     
     client = vision.ImageAnnotatorClient() # todo: explicit credentials
@@ -64,7 +68,7 @@ if __name__ == "__main__":
     print("We are identifying your landmark now...")
     print("We found a match!")
     print("The landmark is named:  " + image_name)
-    print("We can say that with a confidence (out of 100) of: " + str(image_score))
+    print("We can say that with a confidence of: " + to_percent(image_score))
     print("Landmark Location Latitude: " + str(image_latitude))
     print("Landmark Location Longitude: " + str(image_longitude))
 
